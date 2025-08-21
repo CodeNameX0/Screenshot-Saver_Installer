@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크린샷 저장기 - ScreenShot Saver</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            background: #2d2d2d;
+            padding: 60px;
+            width: 100vw;
+            min-height: 100vh;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 3em;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #b0b0b0;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .download-btn {
+            background: #444444;
+            color: white;
+            border: 2px solid #666666;
+            padding: 20px 50px;
+            font-size: 1.4em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 30px 0;
+        }
+        
+        .download-btn:hover {
+            background: #555555;
+            border-color: #888888;
+        }
+        
+        .instructions {
+            text-align: left;
+            margin-top: 50px;
+            background: #333333;
+            padding: 40px;
+            border-left: 4px solid #666666;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .instructions h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #3a3a3a;
+            border: 1px solid #555555;
+        }
+        
+        .step-number {
+            background: #666666;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+        
+        .step-content {
+            display: inline-block;
+            width: calc(100% - 55px);
+            vertical-align: top;
+            color: #e0e0e0;
+        }
+        
+        .warning {
+            background: #3d2626;
+            border: 2px solid #8b4444;
+            color: #ff9999;
+            padding: 20px;
+            margin: 25px 0;
+            font-weight: 500;
+        }
+        
+        .highlight {
+            background: #263d3d;
+            border: 2px solid #448b8b;
+            color: #99ffff;
+            padding: 20px;
+            margin: 25px 0;
+            font-weight: 500;
+        }
+        
+        .code {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 12px 18px;
+            border: 1px solid #555555;
+            font-family: 'Courier New', monospace;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .python-link {
+            color: #88ccff;
+            text-decoration: none;
+        }
+        
+        .python-link:hover {
+            color: #aaddff;
+            text-decoration: underline;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>스크린샷 저장기</h1>
+        <p class="subtitle">
+            Windows 스크린샷 단축키 (Win + Shift + S)로 캡처한 이미지를<br>
+            클립보드가 아닌 바탕화면의 폴더에 자동으로 저장해주는 도구입니다.
+        </p>
+        
+        <a href="https://drive.google.com/uc?export=download&id=1PHr4_oT4PtmNVzNxyg-rQG6ntGV6M2MU" class="download-btn">
+            다운로드
+        </a>
+        
+        <div class="instructions">
+            <h2>설치 가이드</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <div class="step-content">
+                    <strong>다운로드한 ZIP 파일의 압축을 풀어주세요.</strong><br>
+                    압축을 푼 폴더를 바탕화면에 가져다 놓으세요.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <div class="step-content">
+                    <strong>바탕화면에 "AutoScreenshots" 폴더를 만들어주세요.</strong><br>
+                    이 폴더에 스크린샷들이 자동으로 저장됩니다.
+                </div>
+            </div>
+            
+            <div class="warning">
+                중요: 위의 과정이 완료될 때까지 압축 해제된 폴더 안의 어떤 파일도 열지 마세요!
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <div class="step-content">
+                    <strong>Python을 설치해주세요.</strong><br>
+                    <a href="https://www.python.org/downloads/" target="_blank" rel="noopener" class="python-link">Python 공식 사이트</a>에서 최신 버전을 다운로드하여 설치하세요.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <div class="step-content">
+                    <strong>프로그램을 실행해주세요.</strong><br>
+                    압축 해제한 폴더 안의 <span class="code">easy_setup.bat</span> 파일을 더블클릭하여 실행하고 완료될 때까지 기다려주세요.
+                </div>
+            </div>
+            
+            <div class="highlight">
+                자동 시작 설정 (선택사항):<br>
+                컴퓨터를 켤 때마다 자동으로 실행되게 하려면 다음 단계를 따르세요:
+            </div>
+            
+            <div class="step">
+                <span class="step-number">5</span>
+                <div class="step-content">
+                    <strong>바로가기 만들기</strong><br>
+                    <span class="code">easy_setup.bat</span> 파일에서 마우스 우클릭 → "바로 가기 만들기"를 선택하세요.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">6</span>
+                <div class="step-content">
+                    <strong>시작 폴더로 이동</strong><br>
+                    <span class="code">Win + R</span>을 누르고 <span class="code">shell:startup</span>을 입력한 후 Enter를 눌러주세요.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">7</span>
+                <div class="step-content">
+                    <strong>바로가기 복사</strong><br>
+                    5단계에서 만든 바로가기를 열린 시작 폴더로 이동시켜주세요.
+                </div>
+            </div>
+            
+            <div class="highlight">
+                완료! 이제 Windows 스크린샷 단축키 (Win + Shift + S)를 사용할 때마다<br>
+                캡처한 이미지가 바탕화면의 "AutoScreenshots" 폴더에 자동으로 저장됩니다.
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>문제가 발생하면 프로그램을 다시 실행해보세요.</p>
+        </div>
+    </div>
+</body>
+</html>
